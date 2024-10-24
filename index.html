@@ -3,166 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook-Inspired Login</title>
+    <title>Simple Clothing Store</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #444;
+            padding: 10px;
         }
 
-        .container {
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .banner {
+            background: url('store_banner.jpg') no-repeat center center/cover;
+            height: 400px;
             display: flex;
-            justify-content: space-between;
-            max-width: 1000px;
-            width: 100%;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
 
-        .left-section {
-            flex: 1;
+        .banner h2 {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            font-size: 48px;
+        }
+
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
             padding: 20px;
         }
 
-        .left-section h1 {
-            color: #1877f2;
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        .left-section p {
-            font-size: 24px;
-            color: #1c1e21;
-        }
-
-        .right-section {
+        .product {
             background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
+            padding: 20px;
+            margin: 10px;
+            width: 30%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        .right-section input {
-            width: 100%;
-            padding: 14px;
-            margin: 10px 0;
-            border: 1px solid #dddfe2;
-            border-radius: 6px;
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 24px;
+            margin: 15px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        .product button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
             font-size: 16px;
         }
 
-        .login-btn {
-            background-color: #1877f2;
+        .product button:hover {
+            background-color: #4cae4c;
+        }
+
+        footer {
+            background-color: #333;
             color: white;
-            padding: 14px;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .login-btn:hover {
-            background-color: #1659ac;
-        }
-
-        .forgot-password {
-            display: block;
             text-align: center;
-            margin: 12px 0;
-            font-size: 14px;
-            color: #1877f2;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #5cb85c;
             text-decoration: none;
         }
 
-        .divider {
-            margin: 20px 0;
-            text-align: center;
-            position: relative;
+        footer a:hover {
+            text-decoration: underline;
         }
 
-        .divider::before,
-        .divider::after {
-            content: "";
-            height: 1px;
-            background-color: #dddfe2;
-            position: absolute;
-            width: 40%;
-            top: 50%;
-        }
-
-        .divider::before {
-            left: 0;
-        }
-
-        .divider::after {
-            right: 0;
-        }
-
-        .divider span {
-            background-color: white;
-            padding: 0 10px;
-            color: #606770;
-        }
-
-        .create-account-btn {
-            background-color: #42b72a;
-            color: white;
-            padding: 14px;
-            border: none;
-            border-radius: 6px;
-            font-size: 18px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-        }
-
-        .create-account-btn:hover {
-            background-color: #36a420;
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .logo img {
-            width: 150px;
-        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="left-section">
-        <h1>Facebook</h1>
-        <p>Connect with friends and the world around you on Facebook.</p>
+<header>
+    <h1>Clothing Store</h1>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="banner" id="home">
+    <h2>Stylish Clothing for Every Occasion</h2>
+</section>
+
+<section class="products" id="products">
+    <div class="product">
+        <img src="./clothing/shirt.png" alt="T-shirt">
+        <h3>Casual T-Shirt</h3>
+        <p>$19.99</p>
+        <button>Add to Cart</button>
     </div>
 
-    <div class="right-section">
-        <div class="logo">
-            <img src="./logos/fb.png" alt="Noisy Facebook Logo">
-        </div>
-
-        <form>
-            <input type="text" placeholder="Email or Phone Number" required>
-            <input type="password" placeholder="Password" required>
-            <button class="login-btn" type="submit">Log In</button>
-        </form>
-
-        <a href="#" class="forgot-password">Forgotten password?</a>
-
-        <div class="divider"><span>or</span></div>
-
-        <button class="create-account-btn">Create New Account</button>
+    <div class="product">
+        <img src="./clothing/dress.png" alt="Dress">
+        <h3>Summer Dress</h3>
+        <p>$29.99</p>
+        <button>Add to Cart</button>
     </div>
-</div>
+
+    <div class="product">
+        <img src="./clothing/jacket.png" alt="Jacket">
+        <h3>Leather Jacket</h3>
+        <p>$89.99</p>
+        <button>Add to Cart</button>
+    </div>
+</section>
+
+<footer id="contact">
+    <p>Contact us at: <a href="mailto:info@clothingstore.com">info@clothingstore.com</a></p>
+    <p>&copy; 2024 Clothing Store. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
