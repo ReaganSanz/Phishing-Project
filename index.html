@@ -3,114 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A test page displaying clean and perturbed brand logos for assessing anti-phishing tools.">
-    <title>Perturbed Logos Anti-Phishing Test</title>
+    <title>Facebook-Inspired Login</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #f0f2f5;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .logo-section {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 40px 0;
+            justify-content: space-between;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .left-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .left-section h1 {
+            color: #1877f2;
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .left-section p {
+            font-size: 24px;
+            color: #1c1e21;
+        }
+
+        .right-section {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .right-section input {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .login-btn {
+            background-color: #1877f2;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .login-btn:hover {
+            background-color: #1659ac;
+        }
+
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin: 12px 0;
+            font-size: 14px;
+            color: #1877f2;
+            text-decoration: none;
+        }
+
+        .divider {
+            margin: 20px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: "";
+            height: 1px;
+            background-color: #dddfe2;
+            position: absolute;
+            width: 40%;
+            top: 50%;
+        }
+
+        .divider::before {
+            left: 0;
+        }
+
+        .divider::after {
+            right: 0;
+        }
+
+        .divider span {
+            background-color: white;
+            padding: 0 10px;
+            color: #606770;
+        }
+
+        .create-account-btn {
+            background-color: #42b72a;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .create-account-btn:hover {
+            background-color: #36a420;
         }
 
         .logo {
             text-align: center;
-            margin: 20px;
+            margin-bottom: 20px;
         }
 
         .logo img {
-            width: 200px;
-            height: auto;
-            border: 1px solid #ccc;
-            padding: 10px;
-            background-color: #fafafa;
-            transition: transform 0.3s ease;
-        }
-
-        .logo img:hover {
-            transform: scale(1.05);
-        }
-
-        .logo p {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .logo-section {
-                flex-direction: column;
-                align-items: center;
-            }
+            width: 150px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Perturbed Logos Anti-Phishing Test</h1>
-
-
-        <!-- Clean Logos Section -->
-        <h2>Clean Logos</h2>
-         
-        <div class="logo-section">
-            <figure class="logo">
-                <img src="logos/fb.png" alt="Clean version of the Facebook logo for phishing test">
-                <figcaption>Facebook (Clean)</figcaption>
-            </figure>
-    <!---
-          <figure class="logo">
-                <img src="images/instagram.png" alt="Clean version of the Instagram logo for phishing test">
-                <figcaption>Instagram (Clean)</figcaption>
-            </figure>
-            <figure class="logo">
-                <img src="images/bankofamerica.png" alt="Clean version of the Bank of America logo for phishing test">
-                <figcaption>Bank of America (Clean)</figcaption>
-            </figure>
-        -->
-        </div>
-
-        <!-- Perturbed Logos Section -->
-        <h2>Perturbed Logos</h2>
-         
-        <div class="logo-section">
-            <figure class="logo">
-                <img src="perturb_logos/fb_1.png" alt="Perturbed version of the Facebook logo for phishing test">
-                <figcaption>Facebook (Perturbed)</figcaption>
-            </figure>
-            <!--- 
-            <figure class="logo">
-                <img src="images/perturbed/instagram_p.png" alt="Perturbed version of the Instagram logo for phishing test">
-                <figcaption>Instagram (Perturbed)</figcaption>
-            </figure>
-            <figure class="logo">
-                <img src="images/perturbed/bankeofamerica_p.png" alt="Perturbed version of the Bank of America logo for phishing test">
-                <figcaption>Bank of America (Perturbed)</figcaption>
-            </figure>
-        -->
-        </div>
+<div class="container">
+    <div class="left-section">
+        <h1>Facebook</h1>
+        <p>Connect with friends and the world around you on Facebook.</p>
     </div>
+
+    <div class="right-section">
+        <div class="logo">
+            <img src="./logos/fb.png" alt="Noisy Facebook Logo">
+        </div>
+
+        <form>
+            <input type="text" placeholder="Email or Phone Number" required>
+            <input type="password" placeholder="Password" required>
+            <button class="login-btn" type="submit">Log In</button>
+        </form>
+
+        <a href="#" class="forgot-password">Forgotten password?</a>
+
+        <div class="divider"><span>or</span></div>
+
+        <button class="create-account-btn">Create New Account</button>
+    </div>
+</div>
 
 </body>
 </html>
